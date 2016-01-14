@@ -1,0 +1,25 @@
+routes:
+  index:
+    url: /
+    method: get
+    action: index.controller:index
+
+  auth.login:
+    url: /login
+    method: get
+    action: auth.controller:login
+
+  projects.index:
+    url: /projects
+    method: get
+    action: projects.controller:index
+
+  projects.cooking.index:
+    url: /projects/cooking
+    method: get
+    action: projects.cooking.controller:index
+
+  projects.boiler.index:
+    url: /projects/private/boiler
+    method: get
+    action: projects.boiler.controller:index

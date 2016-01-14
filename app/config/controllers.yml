@@ -1,0 +1,36 @@
+services:
+  controller:
+    abstract: true
+    calls:
+      - method: setApplication
+        arguments:
+          - "@app"
+      - method: setUrlGenerator
+        arguments:
+          - "@url_generator"
+      - method: setTwig
+        arguments:
+          - "@twig"
+
+  index.controller:
+    class: Dolondro\Rargh\Controllers\IndexController
+    extends: "@controller"
+
+  auth.controller:
+    class: Dolondro\Rargh\Controllers\AuthController
+    extends: "@controller"
+    arguments:
+      - "@authentication"
+
+  projects.controller:
+    class: Dolondro\Rargh\Controllers\ProjectsController
+    extends: "@controller"
+
+  projects.cooking.controller:
+    class: Dolondro\Rargh\Controllers\Projects\CookingController
+    extends: "@controller"
+
+  projects.boiler.controller:
+    class: Dolondro\Rargh\Controllers\Projects\BoilerController
+    extends: "@controller"
+

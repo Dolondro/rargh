@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="segment">
+        <p class="lead">Public Projects</p>
+        <p style="text-align: left">
+            Half my projects are public (but probably not very interesting).
+            The other half is private (usually just as it contains some data that I probably don't want you snooping at).
+            This section is the former category!
+        </p>
+        {% for project in public_projects %}
+            {% include 'Projects/project.twig' with {'project': project} %}
+        {% endfor %}
+    </div>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="segment" style="margin-top: 30px">
+            <p class="lead">Public Projects</p>
+            {% for project in private_projects %}
+                {% include 'Projects/project.twig' with {'project': project} %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}

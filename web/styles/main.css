@@ -1,0 +1,257 @@
+/*
+ * I know, CSS, very turn of the century, but I can't quite see the point in setting up SASS for something that doesn't really do much
+ */
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  /*border: 1px solid #fff;*/
+}
+
+p a:link{
+    text-decoration: underline;
+}
+
+/*
+ * Base structure
+ */
+
+html{
+  height: 100%;
+  background-color: #333;
+  background-image: url('../images/wallpaper-3029272.jpg');
+  background-attachment: fixed;
+  background-position:center;
+}
+
+.shadowbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 300px rgba(0,0,0,1);
+    z-index: -500;
+}
+
+body {
+  background: none;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+
+}
+
+.panel{
+    color: #000;
+}
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  /*display: table-cell;*/
+  vertical-align: top;
+}
+.cover-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Padding for spacing */
+/*.inner {
+  padding: 30px;
+}*/
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    color: #fff;
+    background-color: rgba(0,0,0,1);
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover{
+    color: #fff;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover{
+    color: #fff;
+}
+
+.navbar-default{
+    border: none;
+}
+
+.navbar{
+    border-radius: 0px !important;
+}
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 16px;
+  font-weight: bold;
+    color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+/*.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}*/
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+
+  .mastfoot{
+      position: absolute;
+      bottom: 0px;
+  }
+
+  body
+  {
+      /*margin-bottom: 50px;*/
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 980px;
+  }
+}
+
+
+.panel-body{
+    color: #000;
+}
+
+.panel{
+    text-shadow: none;
+}
+
+table.table{
+    text-align: left;
+}
+
+.project-section{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.project-section h4, .project-section p{
+  text-align: center;
+}
+
+.masonry-item {
+    max-width: 200px;
+    position: relative;
+}
+
+.masonry-item img {
+    max-width: 100%;
+}
+
+
+.environment{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    opacity:0.6;
+    text-shadow: 0px -1px #cccccc;
+}
+
+.background{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.segment {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+}

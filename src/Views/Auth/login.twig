@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="segment">
+        <p class="lead ng-scope">Login</p>
+        <p>
+            The majority of the projects that live here you won't find vastly exciting, but I'd like to prevent the entire world
+            looking at them because I have the vague semblance of a desire for some kind of privacy.
+        </p>
+        <p>
+            As such! Password form! It's the same as the password to my wifi network, so most people who actually know me
+            shouldn't have an issue ;)
+        </p>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                {% if error %}
+                    <h5 style="background-color: rgba(255, 0, 0, 0.6); padding: 15px; border-radius: 5px">{{ error }}</h5>
+                {% endif %}
+                <form class="form-horizontal" role="form" method="post" action="{{ path('login_check') }}">
+                    <input type="hidden" name="_username" value="admin" />
+                    <input type="password" class="form-control" name="_password" placeholder="Password" autofocus>
+                </form>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+{% endblock %}

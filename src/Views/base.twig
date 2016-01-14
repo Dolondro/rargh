@@ -1,0 +1,73 @@
+<!doctype html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>rargh.co.uk</title>
+    <meta name="description" content="The homepage of some guy called Doug">
+
+
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Set a shorter title for iOS6 devices when saved to home screen -->
+    <meta name="apple-mobile-web-app-title" content="Sandbox">
+
+    <!-- Properties for Google+ snippets -->
+    <meta property="og:title" content="rargh.co.uk">
+    <meta property="og:description" content="The homepage of some guy called Doug">
+
+    <!-- Author of this application -->
+    <link rel="author" href="https://github.com/Dolondro">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="/styles/main.css" rel="stylesheet" type="text/css">
+
+    {% if ("application" != 'development') %}
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-55949720-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    {% endif %}
+</head>
+
+<body>
+
+<div class="shadowbox"></div>
+
+<div class="container">
+    {% include 'Navbar/navbar.twig' %}
+    {% block content %}
+    {% endblock %}
+
+    <div class="segment" style="margin-top: 20px; padding-top: 5px; padding-bottom: 5px; font-size: 20pt; text-align: right">
+        <a class="fa-facebook fa" href="http://facebook.com/lolkek"></a>
+        <a class="fa-twitter fa" href="http://twitter.com/Dolondro"></a>
+        <a class="fa-linkedin fa" href="https://www.linkedin.com/in/dolondro"></a>
+        <a class="fa-github fa" href="http://github.com/Dolondro"></a>
+        <a class="fa-stack-overflow fa" href="http://twitter.com/Dolondro"></a>
+    </div>
+</div>
+
+
+</body>
+</html>

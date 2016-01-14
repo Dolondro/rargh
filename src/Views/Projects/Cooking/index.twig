@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% for recipe in recipes %}
+        <div class="segment" style="margin-bottom: 20px;">
+        <pre style="text-align: left; background: none; color: #ffffff; border: none; padding: 0">{{ recipe }}</pre>
+        </div>
+    {% endfor %}
+{% endblock %}

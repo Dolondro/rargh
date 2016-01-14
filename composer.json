@@ -1,0 +1,45 @@
+{
+    "name": "dolondro/rargh",
+    "description": "Core of the rargh.co.uk website",
+    "authors": [
+        {
+            "name": "Doug",
+            "email": "dougnelson@silktide.com"
+        }
+    ],
+    "min-stability": "dev",
+    "require": {
+        "silex/silex": "dev-master",
+        "silktide/lazy-boy": "~2.1.0",
+        "symfony/security": "^3.0",
+        "twig/twig": "^1.23",
+        "symfony/twig-bridge": "^3.0",
+        "monolog/monolog": "^1.17",
+        "symfony/monolog-bridge": "^3.0",
+        "dolondro/cooking": "dev-master",
+        "dolondro/boiler": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dolondro\\Rargh\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../cooking"
+        },
+        {
+            "type": "path",
+            "url": "../boiler"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/Dolondro/lazy-boy"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/Dolondro/syringe"
+        }
+    ]
+}
