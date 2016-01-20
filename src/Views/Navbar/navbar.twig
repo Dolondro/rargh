@@ -14,14 +14,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div id='navbar' class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                {% include 'navbar/item.twig' with {'name': 'Home', 'url': path('index')} %}
-                {% include 'navbar/item.twig' with {'name': 'Blog', 'url': 'http://blog.rargh.co.uk/'} %}
-                {% include 'navbar/item.twig' with {'name': 'Projects', 'url': path('projects.index') } %}
+                {% include 'Navbar/item.twig' with {'name': 'Home', 'url': path('index')} %}
+                {% include 'Navbar/item.twig' with {'name': 'Blog', 'url': 'http://blog.rargh.co.uk/'} %}
+                {% include 'Navbar/item.twig' with {'name': 'Projects', 'url': path('projects.index') } %}
 
                 {% if not is_granted('ROLE_ADMIN') %}
-                    {% include 'navbar/item.twig' with {'name': 'Login', 'url': '/login'} %}
+                    {% include 'Navbar/item.twig' with {'name': 'Login', 'url': '/login'} %}
                 {% else %}
-                    {% include 'navbar/item.twig' with {'name': 'Logout', 'url': '/logout'} %}
+                    {% include 'Navbar/item.twig' with {'name': 'Logout', 'url': '/logout'} %}
                 {% endif %}
             </ul>
         </div><!-- /.navbar-collapse -->
