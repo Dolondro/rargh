@@ -4,36 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d5ca8e71218719f56cf83a32683ab9b",
-    "content-hash": "51758d7f9f06bbe0c1460479ca696e65",
+    "hash": "105ad20d5e4c095a16eb66cd46fae7c4",
+    "content-hash": "acdbfd7dfee1cd46adb654d19b4a5e43",
     "packages": [
         {
-            "name": "dolondro/boiler",
-            "version": "dev-master",
+            "name": "catfan/medoo",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/catfan/Medoo.git",
+                "reference": "634bcef389e4eaa40d10e6d66a9eecc0f7638cc7"
+            },
             "dist": {
-                "type": "path",
-                "url": "../boiler/",
-                "reference": "4904ce4edeedd9a9d690bdc3fbc2dd94",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/catfan/Medoo/zipball/634bcef389e4eaa40d10e6d66a9eecc0f7638cc7",
+                "reference": "634bcef389e4eaa40d10e6d66a9eecc0f7638cc7",
+                "shasum": ""
             },
             "require": {
-                "silktide/syringe": "^1.1",
-                "symfony/console": "^3.0",
-                "symfony/process": "^3.0"
+                "ext-pdo": "*",
+                "php": ">=5.1"
             },
-            "type": "library",
+            "suggest": {
+                "ext-pdo_dblib": "For MSSQL or Sybase databases on Linux/UNIX platform",
+                "ext-pdo_mysql": "For MySQL or MariaDB databases",
+                "ext-pdo_oci": "For Oracle databases",
+                "ext-pdo_pqsql": "For PostgreSQL databases",
+                "ext-pdo_sqlite": "For SQLite databases",
+                "ext-pdo_sqlsrv": "For MSSQL databases on Windows platform"
+            },
+            "type": "framework",
             "autoload": {
-                "psr-4": {
-                    "Dolondro\\Boiler\\": "src"
-                }
+                "files": [
+                    "medoo.php"
+                ]
             },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
-                    "name": "Doug",
-                    "email": "dougnelson@silktide.com"
+                    "name": "Angel Lai",
+                    "email": "angel@catfan.me"
                 }
             ],
-            "description": "Scraping scripts to scrape the data from the boiler"
+            "description": "The Lightest PHP database framework to accelerate development",
+            "homepage": "http://medoo.in",
+            "keywords": [
+                "database",
+                "lightweight",
+                "mssql",
+                "mysql",
+                "php framework",
+                "sql",
+                "sqlite"
+            ],
+            "time": "2015-10-05 07:26:17"
         },
         {
             "name": "dolondro/cooking",
@@ -57,6 +84,36 @@
                 }
             ],
             "description": "List of cooking recipes"
+        },
+        {
+            "name": "dolondro/hotstuff",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../boiler/",
+                "reference": "fc610a5c0d2de137b3078860291505ad440d0c3c",
+                "shasum": null
+            },
+            "require": {
+                "catfan/medoo": "^1.0",
+                "monolog/monolog": "^1.17",
+                "silktide/syringe": "^1.1",
+                "symfony/console": "^3.0",
+                "symfony/process": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dolondro\\HotStuff\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Doug",
+                    "email": "dougnelson@silktide.com"
+                }
+            ],
+            "description": "Scraping scripts to scrape the data from the boiler"
         },
         {
             "name": "monolog/monolog",
@@ -352,17 +409,23 @@
         },
         {
             "name": "silktide/lazy-boy",
-            "version": "2.1.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Dolondro/lazy-boy",
-                "reference": "22d235d7b0384ddcc474f9edf57ba3910d27e4cf"
+                "url": "https://github.com/silktide/lazy-boy.git",
+                "reference": "43af3201fbc827eb3ad4e42acba9cc1d34a91173"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silktide/lazy-boy/zipball/43af3201fbc827eb3ad4e42acba9cc1d34a91173",
+                "reference": "43af3201fbc827eb3ad4e42acba9cc1d34a91173",
+                "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0",
                 "php": ">=5.4.0",
                 "silex/silex": "dev-master@dev",
-                "silktide/syringe": "1.1.5"
+                "silktide/syringe": "^1.0"
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
@@ -384,25 +447,27 @@
                     "Silktide\\LazyBoy\\Test\\": "test"
                 }
             },
-            "scripts": {
-                "install-lazy-boy": [
-                    "Silktide\\LazyBoy\\Controller\\ScriptController::install"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "A skeleton REST API application, using Silex and Syringe with support for Puzzle-DI",
             "homepage": "https://github.com/silktide/lazy-boy",
-            "time": "2016-01-14 22:11:02"
+            "time": "2016-01-19 12:44:36"
         },
         {
             "name": "silktide/syringe",
-            "version": "1.1.5",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Dolondro/syringe",
-                "reference": "e28a76ae04c62463074bfdfe5cbc317cb860f407"
+                "url": "https://github.com/silktide/syringe.git",
+                "reference": "8fb8bc71b53fbfd76921fff840b7a9ff40b4b4be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silktide/syringe/zipball/8fb8bc71b53fbfd76921fff840b7a9ff40b4b4be",
+                "reference": "8fb8bc71b53fbfd76921fff840b7a9ff40b4b4be",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
@@ -424,12 +489,13 @@
                     "Silktide\\Syringe\\Test\\": "test"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Silktide Syringe, configuration utility for Pimple",
             "homepage": "https://github.com/silktide/syringe",
-            "time": "2016-01-14 21:45:44"
+            "time": "2016-01-20 13:17:17"
         },
         {
             "name": "symfony/console",
@@ -1487,7 +1553,7 @@
     "stability-flags": {
         "silex/silex": 20,
         "dolondro/cooking": 20,
-        "dolondro/boiler": 20
+        "dolondro/hotstuff": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -19,8 +19,6 @@ services:
   auth.controller:
     class: Dolondro\Rargh\Controllers\AuthController
     extends: "@controller"
-    arguments:
-      - "@authentication"
 
   projects.controller:
     class: Dolondro\Rargh\Controllers\ProjectsController

@@ -13,6 +13,6 @@ class BoilerController extends AbstractController
 {
     public function index(Request $request, Application $app)
     {
-        return "Hello";
+        return $this->render([]);
     }
 }

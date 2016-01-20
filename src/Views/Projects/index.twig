@@ -4,11 +4,12 @@
 
     <div class="segment">
         <p class="lead">Public Projects</p>
-        <p style="text-align: left">
+        <p>
             Half my projects are public (but probably not very interesting).
             The other half is private (usually just as it contains some data that I probably don't want you snooping at).
             This section is the former category!
         </p>
+        <hr>
         {% for project in public_projects %}
             {% include 'Projects/project.twig' with {'project': project} %}
         {% endfor %}
@@ -16,7 +17,8 @@
 
     {% if is_granted('ROLE_ADMIN') %}
         <div class="segment" style="margin-top: 30px">
-            <p class="lead">Public Projects</p>
+            <p class="lead">Private Projects</p>
+            <hr>
             {% for project in private_projects %}
                 {% include 'Projects/project.twig' with {'project': project} %}
             {% endfor %}

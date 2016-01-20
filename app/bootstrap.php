@@ -10,6 +10,18 @@ use Silktide\Syringe\Loader\JsonLoader;
 use Silktide\Syringe\Loader\YamlLoader;
 
 
+// Config data should be brought in using environment variables
+// Updating environment variables is a PITA when doing some quick dev, so if we have an
+// env.yml file, dump it into $_SERVER, where syringe will pick it up as if it was an actual environment variable
+$environmentFile = __DIR__."/../env.yml";
+if (file_exists($environmentFile)) {
+    $yaml = new \Symfony\Component\Yaml\Yaml();
+    $array = $yaml->parse($environmentFile);
+    foreach ($array as $key => $value) {
+        $_SERVER[$key]=$value;
+    }
+}
+
 $resolver = new ReferenceResolver();
 $loaders = [
     new JsonLoader(),
@@ -27,5 +39,8 @@ foreach ($loaders as $loader) {
     $builder->addLoader($loader);
 }
 $builder->setApplicationRootDirectory($appDir);
-
+$builder->addConfigFiles([
+    "dolondro_boiler" => $appDir . "/vendor/dolondro/boiler/app/config/services.yml"
+]);
 $builder->addConfigFile("services.yml");
+

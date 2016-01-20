@@ -1,3 +1,6 @@
-<a style="text-align: left; margin-bottom: 10px; padding: 10px" href="{{ project.url }}">
+<a style="text-align: left; margin-bottom: 10px" href="{{ project.url }}">
 <h4>{{ project.name }}</h4>
 </a>
+{% for paragraph in project.description %}
+    <p>{{ paragraph }}</p>
+{% endfor %}
