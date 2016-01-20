@@ -3,7 +3,7 @@
 namespace Dolondro\Rargh\Controllers\Projects;
 
 
-use Dolondro\Cooking\RecipeCollection;
+use Dolondro\CookBook\RecipeCollection;
 use Dolondro\Rargh\Controllers\AbstractController;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;

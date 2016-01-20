@@ -87,7 +87,9 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      queue "composer install"
+      queue "mkdir -p #{deploy_to}/#{current_path}/../cooking"
+      queue "mkdir -p #{deploy_to}/#{current_path}/../hotstuff"
+      queue "composer install --prefer-source"
     end
   end
 end

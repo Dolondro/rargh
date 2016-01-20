@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "105ad20d5e4c095a16eb66cd46fae7c4",
-    "content-hash": "acdbfd7dfee1cd46adb654d19b4a5e43",
+    "hash": "b71e5ad7f75f72a7ec99abcc545762fa",
+    "content-hash": "0265aa78fb2c4f12ac20a39a43f34667",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -63,18 +63,18 @@
             "time": "2015-10-05 07:26:17"
         },
         {
-            "name": "dolondro/cooking",
+            "name": "dolondro/cookbook",
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "../cooking/",
-                "reference": "5c0bac1c475e1af56888b996b7e125813cf6ee7c",
+                "url": "../cookbook/",
+                "reference": "7f8c48a97c68f6f31ea9985b7af829618214cac8",
                 "shasum": null
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Dolondro\\Cooking\\": "src"
+                    "Dolondro\\CookBook\\": "src"
                 }
             },
             "authors": [
@@ -83,15 +83,15 @@
                     "email": "dougnelson@silktide.com"
                 }
             ],
-            "description": "List of cooking recipes"
+            "description": "Because a JSON formatted recipe is surprisingly easy to read"
         },
         {
             "name": "dolondro/hotstuff",
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "../boiler/",
-                "reference": "fc610a5c0d2de137b3078860291505ad440d0c3c",
+                "url": "../hotstuff/",
+                "reference": "b6d9160d7771a4edc5b6e0364ca0b96925d5ceca",
                 "shasum": null
             },
             "require": {
@@ -1552,7 +1552,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "silex/silex": 20,
-        "dolondro/cooking": 20,
+        "dolondro/cookbook": 20,
         "dolondro/hotstuff": 20
     },
     "prefer-stable": false,
