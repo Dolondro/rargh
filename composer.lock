@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b71e5ad7f75f72a7ec99abcc545762fa",
-    "content-hash": "0265aa78fb2c4f12ac20a39a43f34667",
+    "hash": "f33560dc6b91789875e1570e1d2454cf",
+    "content-hash": "8139d637fb72aa423e19e046f5b8e0bb",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -65,11 +65,10 @@
         {
             "name": "dolondro/cookbook",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../cookbook/",
-                "reference": "7f8c48a97c68f6f31ea9985b7af829618214cac8",
-                "shasum": null
+            "source": {
+                "type": "git",
+                "url": "http://github.com/dolondro/cookbook",
+                "reference": "7f8c48a97c68f6f31ea9985b7af829618214cac8"
             },
             "type": "library",
             "autoload": {
@@ -83,16 +82,16 @@
                     "email": "dougnelson@silktide.com"
                 }
             ],
-            "description": "Because a JSON formatted recipe is surprisingly easy to read"
+            "description": "Because a JSON formatted recipe is surprisingly easy to read",
+            "time": "2016-01-20 20:42:33"
         },
         {
             "name": "dolondro/hotstuff",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../hotstuff/",
-                "reference": "b6d9160d7771a4edc5b6e0364ca0b96925d5ceca",
-                "shasum": null
+            "source": {
+                "type": "git",
+                "url": "http://github.com/dolondro/hotstuff",
+                "reference": "b6d9160d7771a4edc5b6e0364ca0b96925d5ceca"
             },
             "require": {
                 "catfan/medoo": "^1.0",
@@ -113,7 +112,8 @@
                     "email": "dougnelson@silktide.com"
                 }
             ],
-            "description": "Scraping scripts to scrape the data from the boiler"
+            "description": "Scraping scripts to scrape the data from the boiler",
+            "time": "2016-01-20 20:34:28"
         },
         {
             "name": "monolog/monolog",
