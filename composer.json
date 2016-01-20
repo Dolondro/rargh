@@ -26,16 +26,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "../hotstuff"
-        },
-        {
             "type": "git",
             "url": "http://github.com/dolondro/hotstuff"
-        },
-        {
-            "type": "path",
-            "url": "../cookbook"
         },
         {
             "type": "git",
