@@ -40,7 +40,7 @@ foreach ($loaders as $loader) {
 }
 $builder->setApplicationRootDirectory($appDir);
 $builder->addConfigFiles([
-    "dolondro_boiler" => $appDir . "/vendor/dolondro/boiler/app/config/services.yml"
+    "dolondro_hotstuff" => $appDir . "/vendor/dolondro/hotstuff/app/config/services.yml"
 ]);
 $builder->addConfigFile("services.yml");
 
