@@ -225,6 +225,10 @@ table.table{
     width: 100%;
 }
 
+.segment input {
+    color: #000;
+}
+
 .project-section h4, .project-section p{
   text-align: center;
 }

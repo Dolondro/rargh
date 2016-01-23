@@ -23,3 +23,8 @@ routes:
     url: /projects/private/boiler
     method: get
     action: projects.boiler.controller:index
+
+  projects.boiler.download:
+    url: /projects/private/boiler/download
+    method: get
+    action: projects.boiler.controller:download

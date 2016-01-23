@@ -31,4 +31,5 @@ services:
   projects.boiler.controller:
     class: Dolondro\Rargh\Controllers\Projects\BoilerController
     extends: "@controller"
-
+    arguments:
+      - "@dolondro_hotstuff.postgres.storage"

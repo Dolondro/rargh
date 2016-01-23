@@ -2,8 +2,28 @@
 
 {% block content %}
     <div class="segment">
-        So, this will contain details regarding the state of that boiler I'm monitoring
-
-        All I've got to do is code the frontend and make some better monitoring software
+        <div class="row">
+            <div class="col-md-3">
+                <form action="{{  path('projects.boiler.download') }}" method="get">
+                    <div class="form-group">
+                        <label for="startdate">Start Date:</label>
+                        <input type="date" value="{{ startdate }}" class="form-control" name="startdate" id="startdate"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="enddate">End Date:</label>
+                        <input type="date" value="{{ enddate }}" class="form-control" name="enddate" id="enddate"/>
+                    </div>
+                    <div class="form-group text-center" style="padding-top: 10px">
+                        <button class="btn btn-default">
+                            Download
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-9">
+                <p>Use the date picker to the right to download a relevant CSV</p>
+                <p>Some form of graph generation would probably be kind of neat</p>
+            </div>
+        </div>
     </div>
 {% endblock %}
