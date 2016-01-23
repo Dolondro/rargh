@@ -68,7 +68,7 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/dolondro/cookbook",
-                "reference": "7f8c48a97c68f6f31ea9985b7af829618214cac8"
+                "reference": "0432093f9574ee1d2ad2c66ea0895252107456db"
             },
             "type": "library",
             "autoload": {
@@ -83,7 +83,7 @@
                 }
             ],
             "description": "Because a JSON formatted recipe is surprisingly easy to read",
-            "time": "2016-01-20 20:42:33"
+            "time": "2016-01-21 20:46:29"
         },
         {
             "name": "dolondro/hotstuff",
@@ -91,7 +91,7 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/dolondro/hotstuff",
-                "reference": "b6d9160d7771a4edc5b6e0364ca0b96925d5ceca"
+                "reference": "86c6d2abebcddc226482a19fbbd2842379c124bf"
             },
             "require": {
                 "catfan/medoo": "^1.0",
@@ -113,7 +113,7 @@
                 }
             ],
             "description": "Scraping scripts to scrape the data from the boiler",
-            "time": "2016-01-20 20:34:28"
+            "time": "2016-01-23 14:32:25"
         },
         {
             "name": "monolog/monolog",
