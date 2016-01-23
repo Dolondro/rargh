@@ -7,6 +7,7 @@ use Dolondro\Rargh\Controllers\AbstractController;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Response;
 
 class BoilerController extends AbstractController
 {
@@ -35,11 +36,8 @@ class BoilerController extends AbstractController
         $enddate = $request->get("enddate");
         $records = $this->storageInterface->between($startdate, $enddate);
 
-        Header("Content-Type: application/octet-stream");
-        Header("Content-Disposition: attachment");
-        Header("Content-Disposition: attachment; filename=\"boiler.csv\"");
-
         $headerSent = false;
+        $output = "";
         foreach ($records as $row) {
             if ($row["data"]=='null') {
                 continue;
@@ -50,11 +48,16 @@ class BoilerController extends AbstractController
             $outputData = array_merge($outputData, $data);
 
             if (!$headerSent) {
-                echo "\"".implode("\",\"", array_keys($outputData))."\"\n";
+                $output.="\"".implode("\",\"", array_keys($outputData))."\"\n";
                 $headerSent = true;
             }
 
-            echo "\"".implode("\",\"", array_values($outputData))."\"\n";
+            $output.="\"".implode("\",\"", array_values($outputData))."\"\n";
         }
+
+        return new Response($output, 200, [
+            "Content-Type" =>  "application/octet-stream",
+            "Content-Disposition" => "attachment; filename=\"boiler.csv\""
+        ]);
     }
 }

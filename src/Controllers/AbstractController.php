@@ -35,11 +35,6 @@ abstract class AbstractController
     public function setApplication(Application $app)
     {
         $this->application = $app;
-
-        //$token = $app['security.token_storage'];
-        //var_dump($token);
-        //die();
-
     }
 
     public function setTwig(\Twig_Environment $twig)
@@ -72,5 +67,4 @@ abstract class AbstractController
 
         return $this->urlGenerator->generate($name);
     }
-
 }
