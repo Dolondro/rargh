@@ -13,8 +13,8 @@ require 'mina/git'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :domain, 'rargh.co.uk'
-set :deploy_to, '/tmp/www/rargh.co.uk'
-set :rsync_options, %w[--recursive --delete --delete-excluded --exclude .git*]
+set :deploy_to, '/srv/rargh.co.uk'
+#set :rsync_options, %w[--recursive --delete --delete-excluded --exclude .git*]
 set :repository, 'http://github.com/dolondro/rargh'
 
 #set :branch, 'master'
@@ -87,8 +87,8 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      queue "mkdir -p #{deploy_to}/#{current_path}/../cookbook"
-      queue "mkdir -p #{deploy_to}/#{current_path}/../hotstuff"
+#      queue "mkdir -p #{deploy_to}/#{current_path}/../cookbook"
+#      queue "mkdir -p #{deploy_to}/#{current_path}/../hotstuff"
       queue "composer install --prefer-source"
     end
   end
