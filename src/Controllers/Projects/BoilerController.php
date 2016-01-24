@@ -26,7 +26,8 @@ class BoilerController extends AbstractController
 
         return $this->render([
             "startdate" => $lastMonth->format("Y-m-d"),
-            "enddate" => $now->format("Y-m-d")
+            "enddate" => $now->format("Y-m-d"),
+            "temperatureData" => $this->storageInterface->recentTemperature(new \DateInterval("P2D"))
         ]);
     }
 
@@ -34,6 +35,15 @@ class BoilerController extends AbstractController
     {
         $startdate = $request->get("startdate");
         $enddate = $request->get("enddate");
+
+        if (!$startdate) {
+            throw new \Exception("startdate parameter is required");
+        }
+
+        if (!$enddate) {
+            throw new \Exception("enddate
+             parameter is required");
+        }
         $records = $this->storageInterface->between($startdate, $enddate);
 
         $headerSent = false;

@@ -91,7 +91,7 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/dolondro/hotstuff",
-                "reference": "527226ea59694d988963bbf802f67bb9b50ecb6b"
+                "reference": "1ba2e9766f07b981629d8018a2dabc45c30c91d4"
             },
             "require": {
                 "catfan/medoo": "^1.0",
@@ -113,7 +113,7 @@
                 }
             ],
             "description": "Scraping scripts to scrape the data from the boiler",
-            "time": "2016-01-23 18:43:25"
+            "time": "2016-01-24 15:40:25"
         },
         {
             "name": "monolog/monolog",
