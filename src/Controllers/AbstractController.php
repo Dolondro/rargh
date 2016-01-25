@@ -5,11 +5,15 @@ namespace Dolondro\Rargh\Controllers;
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 
 abstract class AbstractController
 {
+    /**
+     * @var Application
+     */
     protected $application;
 
     /**
@@ -27,6 +31,11 @@ abstract class AbstractController
      */
     protected $urlGenerator;
 
+    /**
+     * @var RequestStack
+     */
+    protected $requestStack;
+
     public function setUrlGenerator(UrlGenerator $urlGenerator)
     {
         $this->urlGenerator = $urlGenerator;
@@ -35,6 +44,11 @@ abstract class AbstractController
     public function setApplication(Application $app)
     {
         $this->application = $app;
+    }
+
+    public function setRequestStack(RequestStack $requestStack)
+    {
+        $this->requestStack = $requestStack;
     }
 
     public function setTwig(\Twig_Environment $twig)
@@ -49,6 +63,7 @@ abstract class AbstractController
 
     protected function render($array = [])
     {
+        $this->twig->addGlobal("request_path", $this->requestStack->getCurrentRequest()->getPathInfo());
         $calleeClass = get_called_class();
         $calleeMethod = debug_backtrace()[1]['function'];
 

@@ -9,7 +9,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class CookingController extends AbstractController
+class CookbookController extends AbstractController
 {
     public function index(Request $request, Application $app)
     {

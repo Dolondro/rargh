@@ -16,13 +16,15 @@ $frontController = new FrontController(
     "Silex\\Application",
     [
         new \Silex\Provider\SecurityServiceProvider(),
-        new \Silex\Provider\TwigServiceProvider(),
         new \Silex\Provider\MonologServiceProvider(),
         new ServiceControllerServiceProvider(),
         new CorsServiceProvider(),
-        new \Dolondro\Rargh\Provider\TwigGlobalProvider(),
+        new \Silex\Provider\TwigServiceProvider(),
+        new \Dolondro\Rargh\Provider\ErrorProvider(),
         new \Silex\Provider\SessionServiceProvider(),
     ]
 );
 
 $frontController->runApplication();
+
+

@@ -14,11 +14,16 @@ routes:
     method: get
     action: projects.controller:index
 
-  projects.cooking.index:
-    url: /projects/cooking
-    method: get
-    action: projects.cooking.controller:index
 
+  # Projects!
+
+  # CookBook
+  projects.cookbook.index:
+    url: /projects/cookbook
+    method: get
+    action: projects.cookbook.controller:index
+
+  # Boiler
   projects.boiler.index:
     url: /projects/private/boiler
     method: get
@@ -28,3 +33,16 @@ routes:
     url: /projects/private/boiler/download
     method: get
     action: projects.boiler.controller:download
+
+  # Cluedo
+  projects.humancluedo.index:
+    url: /projects/private/humancluedo
+    method: get
+    action: projects.humancluedo.controller:index
+
+
+  # Helius
+  projects.helius.index:
+    url: /projects/private/helius
+    method: get
+    action: projects.helius.controller:index

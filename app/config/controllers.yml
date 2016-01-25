@@ -11,6 +11,9 @@ services:
       - method: setTwig
         arguments:
           - "@twig"
+      - method: setRequestStack
+        arguments:
+          - "@request_stack"
 
   index.controller:
     class: Dolondro\Rargh\Controllers\IndexController
@@ -20,12 +23,20 @@ services:
     class: Dolondro\Rargh\Controllers\AuthController
     extends: "@controller"
 
+  error.controller:
+    class: Dolondro\Rargh\Controllers\ErrorController
+    extends: "@controller"
+
   projects.controller:
     class: Dolondro\Rargh\Controllers\ProjectsController
     extends: "@controller"
 
-  projects.cooking.controller:
-    class: Dolondro\Rargh\Controllers\Projects\CookingController
+  projects.cookbook.controller:
+    class: Dolondro\Rargh\Controllers\Projects\CookbookController
+    extends: "@controller"
+
+  projects.helius.controller:
+    class: Dolondro\Rargh\Controllers\Projects\HeliusController
     extends: "@controller"
 
   projects.boiler.controller:
@@ -33,3 +44,7 @@ services:
     extends: "@controller"
     arguments:
       - "@dolondro_hotstuff.postgres.storage"
+
+  projects.humancluedo.controller:
+    class: Dolondro\Rargh\Controllers\Projects\HumanCluedoController
+    extends: "@controller"

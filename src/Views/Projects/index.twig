@@ -2,23 +2,28 @@
 
 {% block content %}
 
-    <div class="segment">
-        <p class="lead">Public Projects</p>
-        <p>
+    <div class="segment" style="margin-bottom: 20px">
+        <p class="lead" style="display: inline-block">Public Projects</p>
+        <p style="display: inline-block">
             Half my projects are public (but probably not very interesting).
             The other half is private (usually just as it contains some data that I probably don't want you snooping at).
             This section is the former category!
         </p>
-        <hr>
+
         {% for project in public_projects %}
             {% include 'Projects/project.twig' with {'project': project} %}
         {% endfor %}
     </div>
+    <!--</div>-->
 
     {% if is_granted('ROLE_ADMIN') %}
-        <div class="segment" style="margin-top: 30px">
+        <div class="segment" style="margin-top: 30px; margin-bottom: 20px">
             <p class="lead">Private Projects</p>
-            <hr>
+            <p>
+                If you're here, I either trust you or I really shouldn't.
+                If you're not meant to be here, shoo!
+            </p>
+
             {% for project in private_projects %}
                 {% include 'Projects/project.twig' with {'project': project} %}
             {% endfor %}
