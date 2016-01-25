@@ -3,7 +3,16 @@
     <div class="segment">
         <h3>{{ code }}</h3>
         <p>
-            {{ message | raw }}
+            {{ message }}
         </p>
+        {% if video %}
+            <iframe id="error_video" width="100%" height="100" src="{{ video }}" frameborder="0" allowfullscreen></iframe>
+            <script>
+                (function(){
+                    var errorVideo = document.getElementById("error_video");
+                    errorVideo.height = (errorVideo.offsetWidth / 3) * 2;
+                })();
+            </script>
+        {% endif %}
     </div>
 {% endblock %}
