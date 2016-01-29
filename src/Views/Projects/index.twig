@@ -2,32 +2,28 @@
 
 {% block content %}
 
-    <div class="segment" style="margin-bottom: 20px">
-        <p class="lead" style="display: inline-block">Public Projects</p>
-        <p style="display: inline-block">
-            Half my projects are public (but probably not very interesting).
-            The other half is private (usually just as it contains some data that I probably don't want you snooping at).
-            This section is the former category!
-        </p>
+    <div class="row">
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="col-md-6">
+                <div class="segment" style="margin-bottom: 20px; padding-top: 15px; padding-bottom: 15px">
+                    <p class="lead" style="margin-bottom: 0px">Private Projects</p>
+                </div>
 
-        {% for project in public_projects %}
-            {% include 'Projects/project.twig' with {'project': project} %}
-        {% endfor %}
-    </div>
-    <!--</div>-->
+                {% for project in private_projects %}
+                    {% include 'Projects/project.twig' with {'project': project} %}
+                {% endfor %}
+            </div>
+        {% endif %}
 
-    {% if is_granted('ROLE_ADMIN') %}
-        <div class="segment" style="margin-top: 30px; margin-bottom: 20px">
-            <p class="lead">Private Projects</p>
-            <p>
-                If you're here, I either trust you or I really shouldn't.
-                If you're not meant to be here, shoo!
-            </p>
+        <div class="col-md-{% if is_granted('ROLE_ADMIN') %}6{% else %}12{% endif %}">
+            <div class="segment" style="margin-bottom: 20px; padding-top: 15px; padding-bottom: 15px">
+                <p class="lead" style="margin-bottom: 0px">Public Projects</p>
+            </div>
 
-            {% for project in private_projects %}
+            {% for project in public_projects %}
                 {% include 'Projects/project.twig' with {'project': project} %}
             {% endfor %}
         </div>
-    {% endif %}
+    </div>
 
 {% endblock %}
