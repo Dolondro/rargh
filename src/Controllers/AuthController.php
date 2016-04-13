@@ -2,7 +2,6 @@
 
 namespace Dolondro\Rargh\Controllers;
 
-//use Dolondro\Rargh\Services\Authentication;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGenerator;

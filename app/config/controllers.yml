@@ -27,6 +27,12 @@ services:
     class: Dolondro\Rargh\Controllers\ErrorController
     extends: "@controller"
 
+  api.controller:
+    class: Dolondro\Rargh\Controllers\ApiController
+    extends: "@controller"
+    arguments:
+      - "%facebook.verify.token%"
+
   projects.controller:
     class: Dolondro\Rargh\Controllers\ProjectsController
     extends: "@controller"

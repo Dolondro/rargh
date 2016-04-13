@@ -40,9 +40,16 @@ routes:
     method: get
     action: projects.humancluedo.controller:index
 
-
   # Helius
   projects.helius.index:
     url: /projects/private/helius
     method: get
     action: projects.helius.controller:index
+
+
+
+  # API
+  api.index:
+    url: /api/facebook
+    method: get
+    action: api.controller:facebook

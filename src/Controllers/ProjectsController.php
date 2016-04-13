@@ -11,6 +11,7 @@ class ProjectsController extends AbstractController
 {
     public function index(Request $request, Application $app)
     {
+        // This should almost certainly be abstracted to Yaml
         $projects = [
             "public_projects" => [
                 [
