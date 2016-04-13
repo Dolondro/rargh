@@ -17,10 +17,7 @@ class ApiController extends AbstractController
 
     public function facebook(Request $request)
     {
-        $mode = $request->get("hub.mode");
-
-        $verifyToken = $request->get("facebook.verify.token");
-        if ($verifyToken!==$this->facebookVerifyToken) {
+        if ($request->get("hub_verify_token")!==$this->facebookVerifyToken) {
             return $this->application->json(["ok" => false, "message" => "Verification failed"], 401);
         }
 
@@ -29,14 +26,12 @@ class ApiController extends AbstractController
          * hub.challenge - A random string
          * hub.verify_token - The verify_token value you specified when you created the subscription
          */
-        switch ($mode) {
+        switch ($request->get("hub_mode")) {
             case "subscribe":
-                $challenge = $request->get("hub.challenge");
-                // Todo: Fix potential XSS attack here, but they'd have to get the verify token correct anyway... 
-                return $this->application->json(["ok" => true, "challenge" => $challenge]);
+                return $request->get("hub_challenge");
 
         }
-        
-        return $this->application->json(["ok" => false, "mode" => $mode]);
+
+        return $this->application->json(["ok" => false, "mode" => $request->get("hub_mode")]);
     }
 }
