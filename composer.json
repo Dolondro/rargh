@@ -27,11 +27,11 @@
     "repositories": [
         {
             "type": "git",
-            "url": "http://github.com/dolondro/hotstuff"
+            "url": "https://github.com/dolondro/hotstuff"
         },
         {
             "type": "git",
-            "url": "http://github.com/dolondro/cookbook"
+            "url": "https://github.com/dolondro/cookbook"
         }
     ]
 }
