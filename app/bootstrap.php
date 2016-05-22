@@ -16,7 +16,7 @@ use Silktide\Syringe\Loader\YamlLoader;
 $environmentFile = __DIR__."/../env.yml";
 if (file_exists($environmentFile)) {
     $yaml = new \Symfony\Component\Yaml\Yaml();
-    $array = $yaml->parse($environmentFile);
+    $array = $yaml->parse(file_get_contents($environmentFile));
     foreach ($array as $key => $value) {
         $_SERVER[$key]=$value;
     }

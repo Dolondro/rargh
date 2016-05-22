@@ -3,7 +3,7 @@
     <div class="segment">
         <h3>{{ code }}</h3>
         <p>
-            {{ message }}
+            {% if message_pre %}<pre>{% endif %}{{ message }}{% if message_pre %}</pre>{% endif %}
         </p>
         {% if video %}
             <iframe id="error_video" width="100%" height="100" src="{{ video }}" frameborder="0" allowfullscreen></iframe>

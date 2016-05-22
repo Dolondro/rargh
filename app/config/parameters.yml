@@ -1,7 +1,7 @@
 parameters:
   debug: true
   # Don't worry weary traveller, this gets overwritten ;)
-  password: 5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==
+  password: "$2y$10$fH8TuuKdGZhb2cbjZTqh/O4HUsLYFfxT2Tur0BwYnp5wCcBsSxa/G"
 
   # As does this!
   facebook.verify.token: "suspicious"

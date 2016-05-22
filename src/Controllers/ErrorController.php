@@ -10,10 +10,23 @@ class ErrorController extends AbstractController
 {
     public function index(\Exception $e, Request $request, $code)
     {
+        if ($this->debug) {
+            return $this->render([
+                "code" => $code,
+                "message_pre" => true,
+                "message" => print_r([
+                    "Message" => $e->getMessage(),
+                    "Trace" => explode("\n", $e->getTraceAsString())
+                ], true),
+                "video" => false
+            ]);
+        }
+
         return $this->render([
             "code" => $code,
             "message" => $this->getMessage($code),
-            "video" => $this->getVideo($code)
+            "video" => $this->getVideo($code),
+            "message_pre" => false
         ]);
     }
 

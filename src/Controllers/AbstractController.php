@@ -27,6 +27,11 @@ abstract class AbstractController
     protected $session;
 
     /**
+     * @var boolean
+     */
+    protected $debug;
+
+    /**
      * @var UrlGenerator
      */
     protected $urlGenerator;
@@ -35,6 +40,11 @@ abstract class AbstractController
      * @var RequestStack
      */
     protected $requestStack;
+
+    public function setDebug($debug)
+    {
+        $this->debug = $debug;
+    }
 
     public function setUrlGenerator(UrlGenerator $urlGenerator)
     {
