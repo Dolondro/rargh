@@ -23,23 +23,22 @@
             <div class="col-md-9">
                 <p>Use the date picker to the right to download a relevant CSV</p>
                 <p>Have a graph showing what temperature the boiler was over the last 24 hours</p>
-                <canvas id="lastday" width="400" height="400"></canvas>
+                <div id="lastday" style="width: 100%; height: 400px;"></div>
             </div>
         </div>
     </div>
 
     <script>
+        google.charts.load('current', {'packages': ['corechart']});
+
         (function() {
-            var temperatureData = {{ temperatureData | json_encode | raw}};
-            var chart = document.getElementById("lastday");
+            var temperatureData = {{ temperatureData | json_encode | raw }};
+            var chartDiv = document.getElementById("lastday");
 
             // Adjust the width appropriately
-            chart.width = chart.parentElement.clientWidth - 20;
-
-            var labels = [];
-            var setTemp = [];
-            var actualTemp = [];
-            var dataLength = temperatureData.length;
+            var rawData = [
+                ["Time", "Set Temperature", "Actual Temperature"]
+            ];
 
             // Adjust the data
             for (var x = 0; x < temperatureData.length; x++) {
@@ -49,58 +48,28 @@
                 if (row.set_temperature == null) {
                     continue;
                 }
-
-                labels.push(row.datetime);
-                setTemp.push(row.set_temperature);
-                actualTemp.push(row.actual_temperature);
+                rawData.push([
+                    new Date(row.datetime),
+                    +row.set_temperature,
+                    +row.actual_temperature
+                ]);
             }
 
-            Chart.types.Line.extend({
-                name: "LineAlt",
-                initialize: function (data) {
-                    Chart.types.Line.prototype.initialize.apply(this, arguments);
-                    var xLabels = this.scale.xLabels;
-                    xLabels.forEach(function (label, i) {
-                        //console.log(dataLength / 10);
-                        if ((i % Math.floor((dataLength / 20))) != 0) {
+            google.charts.setOnLoadCallback(function(){
+                var data = google.visualization.arrayToDataTable(rawData);
+                var options = {
+                    curveType: 'function',
+                    legend: {position: 'bottom', textStyle:{color: '#FFF'}},
+                    hAxis: {title: 'Time', type: 'datetime', titleTextStyle: {color: '#FFF'}, textStyle:{color: '#FFF'}},
+                    vAxis: {minValue: 0, textStyle:{color: '#FFF'}, titleTextStyle: {color: '#FFF'}},
+                    backgroundColor: { fill:'transparent' },
+                    fontColor: "#fff"
+                };
 
-                            xLabels[i] = '';
-                        }
-                    })
-                }
-            });
-
-            var data = {
-                labels: labels,
-                datasets: [
-                    {
-                        label: "Set Temperature",
-                        fillColor: "rgba(220,220,220,0.2)",
-                        strokeColor: "rgba(220,220,220,1)",
-                        scaleFontColor: "#fff",
-                        pointColor: "rgba(220,220,220,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: setTemp
-                    },
-                    {
-                        label: "Actual Temperature",
-                        fillColor: "rgba(151,187,205,0.2)",
-                        strokeColor: "rgba(151,187,205,1)",
-                        pointColor: "rgba(151,187,205,1)",
-                        scaleFontColor: "#fff",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(151,187,205,1)",
-                        data: actualTemp
-                    }
-                ]
-            };
-
-            var myLineChart = new Chart(chart.getContext("2d")).LineAlt(data, {
-                scaleFontColor: "#ffffff"
+                var chart = new google.visualization.LineChart(chartDiv);
+                chart.draw(data, options);
             });
         })();
     </script>
+
 {% endblock %}
