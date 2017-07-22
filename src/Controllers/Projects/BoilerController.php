@@ -52,7 +52,7 @@ class BoilerController extends AbstractController
                 continue;
             }
             $data = json_decode($row["data"], true);
-            ksort($data);
+            ksort($data, SORT_STRING | SORT_FLAG_CASE);
             $outputData = ["datetime" => $row["datetime"]];
             $outputData = array_merge($outputData, $data);
 
